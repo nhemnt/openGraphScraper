@@ -1,4 +1,4 @@
-import * as validator from 'validator';
+import isURL from 'validator/lib/isURL';
 import { ValidatorSettings, OpenGraphScraperOptions } from './types';
 
 /**
@@ -10,7 +10,7 @@ import { ValidatorSettings, OpenGraphScraperOptions } from './types';
  *
  */
 export function isUrlValid(url: string, urlValidatorSettings: ValidatorSettings) {
-  return typeof url === 'string' && url.length > 0 && validator.isURL(url, urlValidatorSettings);
+  return typeof url === 'string' && url.length > 0 && isURL(url, urlValidatorSettings);
 }
 
 /**
